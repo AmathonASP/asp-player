@@ -27,8 +27,8 @@
 .upload-svg {
   margin-right: 20px; }
 
-.upload-file {
-  width: 329px;
+.upload-file-dropzone {
+  width: 330px;
   height: 388px;
   border: solid 1px #f32924; }
 
@@ -72,3 +72,15 @@
 .form-bottons button {
   width: 157px;
   height: 40px; }
+
+.dropzone-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 140px;
+  color: #818181; }
+  .dropzone-content .audio-icon-wrapper {
+    margin-bottom: 15px; }
+  .dropzone-content .audio-icon-content {
+    width: 174px;
+    text-align: center; }
