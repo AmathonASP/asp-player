@@ -23,6 +23,16 @@ class PlayStatusBar extends Component {
     this.props.onTogglePlay();
   }
   
+  
+  convertTime = (timestamp) => {
+    let minutes = Math.floor(timestamp / 60);
+    let seconds = timestamp - (minutes * 60);
+    if (seconds < 10) { seconds = '0' + seconds; }
+    timestamp = minutes + ':' + seconds;
+    return timestamp;
+  }
+  
+  
   render() {
     const { now } = this.props;
     return (
@@ -52,8 +62,8 @@ class PlayStatusBar extends Component {
             <div className="gradient" />
           </div>
           <div className="time">
-            <div className="now">{now.convertedTime}</div>
-            <div className="total">{now.totalTime}</div>
+            <div className="now">{this.convertTime(now.currentTime)}</div>
+            <div className="total">{this.convertTime(now.totalTime)}</div>
           </div>
         </div>
         <div className="play-status-bar__playlist-btn" />

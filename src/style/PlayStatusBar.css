@@ -33,13 +33,14 @@
       width: 27px;
       height: 23px;
       background-image: url(../assets/svg/backward-btn.svg); }
-    .play-status-bar .play-status-bar__controls .control {
-      width: 12px;
-      height: 20px; }
-      .play-status-bar .play-status-bar__controls .control.play {
-        background-image: url(../assets/svg/play-btn.svg); }
-      .play-status-bar .play-status-bar__controls .control.pause {
-        background-image: url(../assets/svg/pause-btn.svg); }
+    .play-status-bar .play-status-bar__controls .control.play {
+      width: 25px;
+      height: 25px;
+      background-image: url(../assets/svg/play-btn.svg); }
+    .play-status-bar .play-status-bar__controls .control.pause {
+      width: 25px;
+      height: 20px;
+      background-image: url(../assets/svg/pause-btn.svg); }
     .play-status-bar .play-status-bar__controls .forward {
       width: 26px;
       height: 23px;
