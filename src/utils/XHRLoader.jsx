@@ -6,7 +6,7 @@
 
 const { performance, XMLHttpRequest } = window;
 
-class ASPLoader {
+class XHRLoader {
   constructor (config) {
     if (config && config.xhrSetup) {
       this.xhrSetup = config.xhrSetup;
@@ -170,4 +170,4 @@ class ASPLoader {
   }
 }
 
-export default ASPLoader;
+export default XHRLoader;

@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import update from 'immutability-helper';
 
 import Hls from 'hls.js';
-import ASPLoader from '../utils/ASPLoader';
+import XHRLoader from '../utils/XHRLoader';
 
 import Main from './Main';
 import Player from './Player';
@@ -19,7 +19,7 @@ class App extends Component {
        
       if (Hls.isSupported()) {
         // var hls = new Hls();
-        Hls.DefaultConfig.loader = ASPLoader;
+        Hls.DefaultConfig.loader = XHRLoader;
         Hls.DefaultConfig.debug = false;
         if (Hls.isSupported()) {
           const hls = new Hls();
@@ -28,7 +28,9 @@ class App extends Component {
           const audio = document.querySelector('#audio');
           hls.attachMedia(audio);
           // TODO: Error Handling (Uncaught (in promise) DOMException: play() failed because the user didn't interact with the document first.)
-          hls.on(Hls.Events.MANIFEST_PARSED, () => console.log('hls manifest load'));
+          hls.on(Hls.Events.MANIFEST_PARSED, () => {
+            console.log('hls manifest parsed');
+          });
         }
         // hls.loadSource(this.state.track.source);
         // hls.attachMedia(audio);
@@ -47,7 +49,7 @@ class App extends Component {
       status: "stop",
       currentTime: 0,
       totalTime: 0,
-      convertedTime: "00:00"
+      convertedTime: "00:00",
     },
   }
   
