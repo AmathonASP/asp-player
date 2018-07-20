@@ -14,11 +14,18 @@ $bottom-padding: 51px;
 }
 
 .Upload {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-image: linear-gradient(57deg, rgba(217, 217, 217, 0.5), rgba(68, 68, 68, 0.5));
   height: 100vh;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 133px;
+  max-width: 1140px;
 }
 
 .upload-form-header {
@@ -128,3 +135,7 @@ $bottom-padding: 51px;
   }
 }
 
+.wrapper {
+  justify-content: center;
+  display: flex;
+}

@@ -1,8 +1,94 @@
 .Player {
-  width: 100%;
   height: 100vh;
+  color: #171717;
   background-image: linear-gradient(57deg, rgba(255, 255, 255, 0.5), rgba(206, 209, 211, 0.5)); }
 
-.album-image {
+.album-art {
   width: 460px;
-  height: 460px; }
+  height: 460px;
+  box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.5); }
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 133px;
+  max-width: 1140px; }
+
+.wrapper {
+  justify-content: center;
+  display: flex; }
+
+.player-album-image {
+  margin-bottom: 60px; }
+
+.player-song-info {
+  margin-bottom: 60px;
+  display: flex;
+  align-content: center;
+  flex-direction: column; }
+  .player-song-info .title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .player-song-info .artist {
+    font-size: 20px; }
+
+.play-status-bar__player {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px; }
+  .play-status-bar__player .play-status-bar__controls {
+    list-style: none;
+    padding: 0;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; }
+    .play-status-bar__player .play-status-bar__controls li {
+      float: left; }
+    .play-status-bar__player .play-status-bar__controls * {
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      margin: 0 20px;
+      cursor: pointer; }
+    .play-status-bar__player .play-status-bar__controls .repeat {
+      width: 45px;
+      height: 42px; }
+      .play-status-bar__player .play-status-bar__controls .repeat.off {
+        background-image: url(../assets/svg/repeat-btn-off.svg); }
+    .play-status-bar__player .play-status-bar__controls .backward {
+      width: 42px;
+      height: 33px;
+      background-image: url(../assets/svg/backward-btn.svg); }
+    .play-status-bar__player .play-status-bar__controls .control.play {
+      width: 33px;
+      height: 33px;
+      background-image: url(../assets/svg/play-btn.svg); }
+    .play-status-bar__player .play-status-bar__controls .control.pause {
+      width: 18px;
+      height: 31px;
+      background-image: url(../assets/svg/pause-btn.svg); }
+    .play-status-bar__player .play-status-bar__controls .forward {
+      width: 42px;
+      height: 33px;
+      background-image: url(../assets/svg/forward-btn.svg); }
+    .play-status-bar__player .play-status-bar__controls .random {
+      width: 62px;
+      height: 42px; }
+      .play-status-bar__player .play-status-bar__controls .random.off {
+        background-image: url(../assets/svg/random-btn-off.svg); }
+
+.bar {
+  height: 2px;
+  border-top: none;
+  background-color: #dcdfe2; }
+
+.progress {
+  width: 229px;
+  border-top: solid 2px #f32924; }

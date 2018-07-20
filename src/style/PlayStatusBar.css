@@ -9,6 +9,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
+  .play-status-bar a {
+    text-decoration: none;
+    color: #171717; }
   .play-status-bar .play-status-bar__controls {
     list-style: none;
     padding: 0;

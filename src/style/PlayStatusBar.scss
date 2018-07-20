@@ -14,6 +14,10 @@ $warmGrayTextColor: #818181;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  a {
+    text-decoration: none;
+    color: $blackTextColor;
+  }
   
   .play-status-bar__controls {
     list-style: none;

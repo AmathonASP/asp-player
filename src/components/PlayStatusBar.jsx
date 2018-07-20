@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import '../style/PlayStatusBar.css';
 
@@ -48,24 +49,26 @@ class PlayStatusBar extends Component {
           <li className="forward" />
           <li className="random off" />
         </ul>
-        <div className="play-status-bar__info">
-          <div className="albumart" />
-          <div className="music-info">
-            <div className="title">
-              <span className="marquee">
-                Stranded (Feat. Broods, Reggie Watts, Saro)
-              </span>
+        <Link to='/player'>
+          <div className="play-status-bar__info">
+            <div className="albumart" />
+            <div className="music-info">
+              <div className="title">
+                <span className="marquee">
+                  Stranded (Feat. Broods, Reggie Watts, Saro)
+                </span>
+              </div>
+              <div className="artist">
+              Flight Facilities
+              </div>
+              <div className="gradient" />
             </div>
-            <div className="artist">
-            Flight Facilities
+            <div className="time">
+              <div className="now">{this.convertTime(now.currentTime)}</div>
+              <div className="total">{this.convertTime(now.totalTime)}</div>
             </div>
-            <div className="gradient" />
           </div>
-          <div className="time">
-            <div className="now">{this.convertTime(now.currentTime)}</div>
-            <div className="total">{this.convertTime(now.totalTime)}</div>
-          </div>
-        </div>
+        </Link>
         <div className="play-status-bar__playlist-btn" />
       </div>  
     );
