@@ -1,0 +1,27 @@
+@import "./config.scss";
+
+.btn {
+	padding:6.5px 36px;
+	display:inline-block;
+	font-size:14px;
+	vertical-align: middle;
+	line-height: 1.5;
+}
+
+.svg {
+	vertical-align: text-top;
+}
+
+.btn-player {
+}
+
+.btn-red {
+  background: $color-tomato;
+  border: 1px solid $color-tomato;
+  color: #fff;
+}
+
+.btn-white {
+  border: 1px solid $color-tomato;
+  color: $color-tomato;
+}
