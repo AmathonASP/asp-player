@@ -8,6 +8,9 @@ import Main from './Main';
 import Player from './Player';
 import Upload from './Upload';
 import '../style/App.css';
+import '../style/Player.css';
+import '../style/Upload.css';
+import '../style/default.css';
 
 class App extends Component {
   componentDidMount() {

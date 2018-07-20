@@ -1,0 +1,96 @@
+.upload-form-wrapper {
+  width: 707px;
+  height: 454px;
+  background-color: #ffffff;
+  box-shadow: 20px 20px 20px 0 rgba(0, 0, 0, 0.26);
+  padding: 45px 58px 51px 60px; }
+
+.Upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(57deg, rgba(217, 217, 217, 0.5), rgba(68, 68, 68, 0.5));
+  height: 100vh; }
+
+.upload-form-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px; }
+
+.upload-file-header {
+  font-size: 25px;
+  font-weight: bold; }
+
+.esc-page {
+  margin-left: auto; }
+
+.upload-svg {
+  margin-right: 20px; }
+
+.upload-file-dropzone {
+  width: 328px;
+  height: 386px;
+  border: solid 1px #f32924; }
+
+.upload-form-main {
+  display: flex; }
+
+.upload-file-info {
+  margin-left: auto; }
+
+.player-input {
+  height: 18px;
+  border: solid 1px #818181;
+  padding: 8px 15px; }
+
+.form-groups {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column; }
+
+.player-label {
+  margin-bottom: 8px;
+  align-self: stretch;
+  text-align: left; }
+
+.form-bottons {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between; }
+
+.upload-file-info {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 330px; }
+
+.add-playlist {
+  margin-top: 10px; }
+  .add-playlist .svg {
+    margin-right: 8px; }
+
+.form-bottons button {
+  width: 157px;
+  height: 40px; }
+
+.dropzone-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 140px;
+  color: #818181; }
+  .dropzone-content .audio-icon-wrapper {
+    margin-bottom: 15px; }
+  .dropzone-content .audio-icon-content {
+    width: 174px;
+    text-align: center; }
+
+.album-img-wrapper {
+  width: 330px;
+  height: 388px; }
+  .album-img-wrapper img {
+    width: 330px;
+    height: 330px;
+    margin-bottom: -5px; }
+  .album-img-wrapper .btn-upload-image {
+    width: 330px;
+    height: 58px; }
