@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import jsmediatags from 'jsmediatags';
 import base64js from 'base64-js';
@@ -68,7 +69,9 @@ class Player extends Component {
                 Upload Files
               </div>
               <div className='esc-page'>
-                <img src={esc} className='esc-svg' height="27px"/>
+                <Link to='/'>
+                  <img src={esc} className='esc-svg' height="27px"/>
+                </Link>
               </div>
             </div>
             <div className="upload-form-main">
