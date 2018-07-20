@@ -3,31 +3,22 @@ import React, { Component } from 'react';
 import '../style/MusicList.css';
 
 class MusicList extends Component {
+
   render() {
+    const { musicList } = this.props;
+    
     return (
       <div className="music-list">
-      
         <div className="ASP" />
-        <div className="music-list__item">
-          <div className="blur"/>
-          <h2>Stranded (Feat. Broods, Reggie Watts, Saro)</h2>
-          <p>Flight Facilities</p>
-        </div>
-        <div className="music-list__item">
-          <div className="blur"/>
-          <h2>Stranded (Feat. Broods, Reggie Watts, Saro)</h2>
-          <p>Flight Facilities</p>
-        </div>
-        <div className="music-list__item">
-          <div className="blur"/>
-          <h2>Stranded (Feat. Broods, Reggie Watts, Saro)</h2>
-          <p>Flight Facilities</p>
-        </div>
-        <div className="music-list__item">
-          <div className="blur"/>
-          <h2>Stranded (Feat. Broods, Reggie Watts, Saro)</h2>
-          <p>Flight Facilities</p>
-        </div>
+        {musicList.map((music) => {
+          return (
+            <div className="music-list__item" style={{backgroundImage: `url(${music.thumbnail})`}}>
+              <div className="blur"/>
+              <h2>{music.title}</h2>
+              <p>{music.artist}</p>
+            </div>
+          );
+        })}
         <svg>
           <defs>
             <filter id="blur">

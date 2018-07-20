@@ -15,6 +15,7 @@ class Player extends Component {
     this.state = {
       title: '',
       artist: '',
+      audio: '',
       albumArtSrc: null,
     };
   }
@@ -48,7 +49,19 @@ class Player extends Component {
   handleFile = (file) => {
     if(file) {
       this.readMediaTag(file);
+      this.setState({
+        audio: file,
+      });
     }
+  }
+
+  createForm() {
+    const formData = new FormData();
+    formData.append("artist", this.state.artist);
+    formData.append("title", this.state.title);
+    formData.append("audio", this.state.audio);
+    formData.append("thumbnail", this.state.thumbnail);
+    return formData;
   }
 
   hanldeAlbumArtChange = (file) => {
