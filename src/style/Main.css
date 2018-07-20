@@ -1,0 +1,10 @@
+.Main .ASP {
+  background: url(../assets/svg/asp.svg) no-repeat center;
+  background-size: contain;
+  color: rgba(220, 223, 226, 0.44);
+  position: fixed;
+  line-height: 1em;
+  width: 140px;
+  height: 100%;
+  left: 50px;
+  bottom: -35px; }
