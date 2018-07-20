@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Dropzone from '../components/dropzone';
 import esc from '../asset/svg/esc.svg';
 import addBtnOn from '../asset/svg/add-btn-on.svg';
 
@@ -21,8 +22,7 @@ class Player extends Component {
             </div>
             <div className="upload-form-main">
               <div className="upload-file">
-                <div className="upload-file-dropzone">
-                </div>
+                <Dropzone />
               </div>
               <div className="upload-file-info">
                 <div className="form-groups">
