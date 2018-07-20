@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import jsmediatags from 'jsmediatags';
+import base64js from 'base64-js';
 import Dropzone from '../components/dropzone';
+import AlbumArt from '../components/AlbumArt';
 import esc from '../asset/svg/esc.svg';
 import addBtnOn from '../asset/svg/add-btn-on.svg';
 import uploadBtn from '../asset/svg/upload-btn.svg';
@@ -11,18 +13,29 @@ class Player extends Component {
     this.state = {
       title: '',
       artist: '',
-      musicFile: null,
+      albumArtSrc: null,
     };
+  }
+
+  updateFileInfo = (tags) => {
+    const { title, artist, APIC } = tags;
+    this.setState({
+      title,
+      artist
+    });
+    if(APIC) {
+      const { data } = APIC;
+      const albumArtSrc = 'data:' + data.format + ';base64,' + base64js.fromByteArray(data.data);
+      this.setState({
+        albumArtSrc,
+      })
+    }
   }
 
   readMediaTag = (file) => {
     const metaTag = jsmediatags.read(file, {
       onSuccess: ({tags}) => {
-        const { title, artist } = tags;
-        this.setState({
-          title,
-          artist
-        });
+        this.updateFileInfo(tags);
       },
       onError: (error) => {
         console.log(error);
@@ -31,7 +44,13 @@ class Player extends Component {
   }
 
   handleFile = (file) => {
-    this.readMediaTag(file);
+    if(file) {
+      this.readMediaTag(file);
+    }
+  }
+
+  hanldeAlbumArtChange = (file) => {
+
   }
 
   render() {
@@ -52,9 +71,14 @@ class Player extends Component {
             </div>
             <div className="upload-form-main">
               <div className="upload-file">
-                <Dropzone
-                  handleFileChange = {this.handleFile}
-                />
+                {this.state.albumArtSrc ? 
+                  <AlbumArt
+                    albumArtSrc={this.state.albumArtSrc}
+                  /> :
+                  <Dropzone
+                    handleFileChange = {this.handleFile}
+                  />
+                }
               </div>
               <div className="upload-file-info">
                 <div className="form-groups">
@@ -67,7 +91,7 @@ class Player extends Component {
                 </div>
                 <div className="form-groups">
                   <label className="player-label">Playlist</label>
-                  <input type="text" value="eee" className='player-input'/>
+                  <input type="text" value="기본" className='player-input'/>
                   <button type="button" className='btn btn-red add-playlist'>
                     <img src={addBtnOn} className='svg'/>
                     <span>

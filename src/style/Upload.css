@@ -28,8 +28,8 @@
   margin-right: 20px; }
 
 .upload-file-dropzone {
-  width: 330px;
-  height: 388px;
+  width: 328px;
+  height: 386px;
   border: solid 1px #f32924; }
 
 .upload-form-main {
@@ -83,3 +83,14 @@
   .dropzone-content .audio-icon-content {
     width: 174px;
     text-align: center; }
+
+.album-img-wrapper {
+  width: 330px;
+  height: 388px; }
+  .album-img-wrapper img {
+    width: 330px;
+    height: 330px;
+    margin-bottom: -5px; }
+  .album-img-wrapper .btn-upload-image {
+    width: 330px;
+    height: 58px; }
