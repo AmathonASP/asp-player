@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from '../components/Header';
 import jsmediatags from 'jsmediatags';
 import base64js from 'base64-js';
 import Dropzone from '../components/dropzone';
@@ -56,6 +57,7 @@ class Player extends Component {
   render() {
     return (
       <div className="Upload">
+        <Header style={{backgroundColor: 'inherit', justifyContent: 'center'}}/>
         <div className="upload-form-wrapper">
           <form>
             <div className="upload-form-header">
