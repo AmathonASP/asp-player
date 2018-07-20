@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import update from 'immutability-helper';
+import axios from 'axios';
 
 import Hls from 'hls.js';
 import ASPLoader from '../utils/ASPLoader';
