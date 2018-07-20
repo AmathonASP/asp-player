@@ -41,8 +41,8 @@ $bottom-padding: 51px;
 }
 
 .upload-file-dropzone {
-  width: 330px;
-  height: 388px;
+  width: 328px;
+  height: 386px;
   border: solid 1px $color-tomato;
 }
 
@@ -112,3 +112,19 @@ $bottom-padding: 51px;
     text-align: center;
   }
 }
+
+.album-img-wrapper {
+  width: 330px;
+  height: 388px;
+
+  img {
+    width: 330px;
+    height: 330px;
+    margin-bottom: -5px;
+  }
+  .btn-upload-image {
+    width: 330px;
+    height: 58px;   
+  }
+}
+
