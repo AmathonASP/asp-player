@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import update from 'immutability-helper';
 
 import Hls from 'hls.js';
 
@@ -13,7 +14,7 @@ class App extends Component {
     const audio = document.getElementById('audio');
     if (Hls.isSupported()) {
       var hls = new Hls();
-      hls.loadSource('https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8');
+      hls.loadSource(this.state.track.source);
       hls.attachMedia(audio);
       hls.on(Hls.Events.MANIFEST_PARSED,function() {
         console.log('hls manifest load');
@@ -35,42 +36,44 @@ class App extends Component {
   
   updateTime = (timestamp) => {
     timestamp = Math.floor(timestamp);
-    this.setState({ now: {currentTime: timestamp }});
-  }
-  
-  convertTime = (timestamp) => {
-    let minutes = Math.floor(timestamp / 60);
-    let seconds = timestamp - (minutes * 60);
-    if (seconds < 10) { seconds = '0' + seconds; }
-    timestamp = minutes + ':' + seconds;
-    return timestamp;
+    const newState = update(this.state, {
+      now: {
+        currentTime: { $set: timestamp },
+      }   
+    });
+    this.setState(newState);
   }
   
   handleTogglePlay = () => {
-    const { status, currentTime } = this.state.now;
+    const { status } = this.state.now;
     const audio = document.getElementById('audio');
+    let render;
     
     if (status === "play") {
-      this.setState({
+      const newState = update(this.state, {
         now: {
-          status: "pause",
-        }
+          status: { $set: "pause" },
+        }   
       });
+      this.setState(newState);
       audio.pause();
+      clearInterval(render);
     } else {
-      this.setState({
+      const newState = update(this.state, {
         now: {
-          status: "play",
-        }
+          status: { $set: "play" },  
+          totalTime: { $set: Math.floor(audio.duration) },
+        }   
       });
+      this.setState(newState);
       audio.play();
       let _this = this;
-      setInterval(function() {
-        _this.updateTime(currentTime);
-        _this.setState({now: { convertedTime: _this.convertTime(currentTime)}});
+      render = setInterval(function() {
+        _this.updateTime(document.getElementById('audio').played.end(0));
       }, 100);
     }
   }
+
   
   render() {
     const { now } = this.state;

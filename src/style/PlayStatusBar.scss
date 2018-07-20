@@ -52,12 +52,15 @@ $warmGrayTextColor: #818181;
     }
     
     .control {
-      width: 12px;
-      height: 20px;
       &.play {
+        width: 25px;
+        height: 25px;
+      
         background-image: url(../assets/svg/play-btn.svg);
       }
       &.pause {
+        width: 25px;
+        height: 20px;
         background-image: url(../assets/svg/pause-btn.svg);
       }
     }
