@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Dropzone from '../components/dropzone';
 import esc from '../asset/svg/esc.svg';
 import addBtnOn from '../asset/svg/add-btn-on.svg';
+import uploadBtn from '../asset/svg/upload-btn.svg';
 
 class Player extends Component {
   render() {
@@ -11,7 +12,7 @@ class Player extends Component {
           <form>
             <div className="upload-form-header">
               <div className="upload-svg-wrapper">
-                <img src={esc} className='upload-svg' />
+                <img src={uploadBtn} className='upload-svg' />
               </div>
               <div className="upload-file-header">
                 Upload Files
