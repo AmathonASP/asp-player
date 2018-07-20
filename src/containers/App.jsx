@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import update from 'immutability-helper';
 
 import Hls from 'hls.js';
+import ASPLoader from '../utils/ASPLoader';
 
 import Main from './Main';
 import Player from './Player';
@@ -14,14 +15,27 @@ import '../style/default.css';
 
 class App extends Component {
   componentDidMount() {
-    const audio = document.getElementById('audio');
-    if (Hls.isSupported()) {
-      var hls = new Hls();
-      hls.loadSource(this.state.track.source);
-      hls.attachMedia(audio);
-      hls.on(Hls.Events.MANIFEST_PARSED,function() {
-        console.log('hls manifest load');
-      });
+    if (this.state.track.source) {
+       
+      if (Hls.isSupported()) {
+        // var hls = new Hls();
+        Hls.DefaultConfig.loader = ASPLoader;
+        Hls.DefaultConfig.debug = false;
+        if (Hls.isSupported()) {
+          const hls = new Hls();
+          hls.loadSource(this.state.track.source);
+          // let video = null;
+          const audio = document.querySelector('#audio');
+          hls.attachMedia(audio);
+          // TODO: Error Handling (Uncaught (in promise) DOMException: play() failed because the user didn't interact with the document first.)
+          hls.on(Hls.Events.MANIFEST_PARSED, () => console.log('hls manifest load'));
+        }
+        // hls.loadSource(this.state.track.source);
+        // hls.attachMedia(audio);
+        // hls.on(Hls.Events.MANIFEST_PARSED,function() {
+        //   console.log('hls manifest load');
+        // }); 
+      }
     }
   }
   
@@ -62,18 +76,20 @@ class App extends Component {
       audio.pause();
       clearInterval(render);
     } else {
-      const newState = update(this.state, {
-        now: {
-          status: { $set: "play" },  
-          totalTime: { $set: Math.floor(audio.duration) },
-        }   
-      });
-      this.setState(newState);
-      audio.play();
-      let _this = this;
-      render = setInterval(function() {
-        _this.updateTime(document.getElementById('audio').played.end(0));
-      }, 100);
+      if (this.state.track.source) {
+        const newState = update(this.state, {
+          now: {
+            status: { $set: "play" },  
+            totalTime: { $set: Math.floor(audio.duration) },
+          }   
+        });
+        this.setState(newState);
+        audio.play();
+        let _this = this;
+        render = setInterval(function() {
+          _this.updateTime(document.getElementById('audio').currentTime);
+        }, 100);
+      }
     }
   }
 
@@ -90,7 +106,7 @@ class App extends Component {
             />
           )}/>
           <Route exact path="/player" render={(props) => (
-            <Player {...props} now={now} />
+            <Player {...props} now={now} onTogglePlay={this.handleTogglePlay} />
           )}/>
           <Route exact path='/upload' component={Upload} />
         </Switch>

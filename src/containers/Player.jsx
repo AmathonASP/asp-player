@@ -29,16 +29,16 @@ class Player extends Component {
                     <li className="repeat off" />
                     <li className="backward" />
                     { now.status === "pause" || now.status === "stop" ? 
-                      <li className="control play" onClick={this.handleTogglePlay}/>
+                      <li className="control play" onClick={this.props.onTogglePlay}/>
                       :
-                      <li className="control pause" onClick={this.handleTogglePlay}/>
+                      <li className="control pause" onClick={this.props.onTogglePlay}/>
                     }
                     <li className="forward" />
                     <li className="random off" />
                   </ul>
                 </div>
                 <div className='bar'>
-                  <div className='progress'>
+                  <div className='progress' style={{width: (now.currentTime / now.totalTime * 511) + 'px'}}>
                   </div>
                 </div>
               </div>
