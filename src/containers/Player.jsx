@@ -4,7 +4,18 @@ class Player extends Component {
   render() {
     return (
       <div className="Player">
-        <h1>Hello Player</h1>
+        <div className="main-player-wrapper">
+          <div className="main-player">
+            <div className="player-album-image">
+              <img className="album-image"/>
+  
+            </div>
+            <div className="player-song-info">
+            </div>
+            <div className="player-control">
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

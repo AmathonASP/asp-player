@@ -1,0 +1,100 @@
+@import "./config.scss";
+
+$left-padding: 60px;
+$right-padding: 58px;
+$top-padding: 45px;
+$bottom-padding: 51px;
+
+.upload-form-wrapper {
+  width: 825px - ($left-padding + $right-padding);
+  height: 550px - ($top-padding + $bottom-padding);
+  background-color: #ffffff;
+  box-shadow: 20px 20px 20px 0 rgba(0, 0, 0, 0.26);
+  padding: $top-padding $right-padding $bottom-padding $left-padding;
+}
+
+.Upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(57deg, rgba(217, 217, 217, 0.5), rgba(68, 68, 68, 0.5));
+  height: 100vh;
+}
+
+.upload-form-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.upload-file-header {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.esc-page {
+  margin-left: auto;
+}
+
+.upload-svg {
+  margin-right: 20px;
+}
+
+.upload-file {
+  width: 329px;
+  height: 388px;
+  border: solid 1px $color-tomato;
+}
+
+.upload-form-main {
+  display: flex;
+}
+
+.upload-file-info {
+  margin-left: auto;
+}
+
+.player-input {
+  height: 18px;
+  border: solid 1px $color-wram-gray;
+  padding: 8px 15px;
+}
+
+.form-groups {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.player-label {
+  margin-bottom: 8px;
+  align-self: stretch;
+  text-align: left;
+  font-weight: bold;
+}
+
+.form-bottons {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.upload-file-info {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 330px;
+}
+
+.add-playlist {
+  margin-top: 10px;
+  .svg {
+    margin-right: 8px;
+  }
+}
+
+.form-bottons {
+  button {
+    width: 157px;
+    height: 40px;
+  }
+}
