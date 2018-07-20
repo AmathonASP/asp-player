@@ -1,0 +1,30 @@
+/**************
+ *** Header ***
+ **************/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 133px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  background-color: #ffffff; }
+  .header .header-item {
+    cursor: pointer; }
+    .header .header-item.dummy {
+      width: 52px;
+      height: 52px;
+      cursor: default !important; }
+    .header .header-item.upload {
+      width: 42px;
+      height: 52px;
+      margin-left: 52px;
+      background-image: url(../assets/svg/upload-btn.svg); }
+  .header .header-logo {
+    width: 51px;
+    height: 51px;
+    background-image: url(../assets/svg/logo.svg); }

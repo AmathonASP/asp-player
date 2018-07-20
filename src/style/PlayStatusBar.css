@@ -1,0 +1,110 @@
+.play-status-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 106px;
+  background-color: #dcdfe2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .play-status-bar .play-status-bar__controls {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    .play-status-bar .play-status-bar__controls li {
+      float: left; }
+    .play-status-bar .play-status-bar__controls * {
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      margin: 0 20px;
+      cursor: pointer; }
+    .play-status-bar .play-status-bar__controls .repeat {
+      width: 29px;
+      height: 27px; }
+      .play-status-bar .play-status-bar__controls .repeat.off {
+        background-image: url(../assets/svg/repeat-btn-off.svg); }
+    .play-status-bar .play-status-bar__controls .backward {
+      width: 27px;
+      height: 23px;
+      background-image: url(../assets/svg/backward-btn.svg); }
+    .play-status-bar .play-status-bar__controls .control {
+      width: 12px;
+      height: 20px; }
+      .play-status-bar .play-status-bar__controls .control.play {
+        background-image: url(../assets/svg/play-btn.svg); }
+      .play-status-bar .play-status-bar__controls .control.pause {
+        background-image: url(../assets/svg/pause-btn.svg); }
+    .play-status-bar .play-status-bar__controls .forward {
+      width: 26px;
+      height: 23px;
+      background-image: url(../assets/svg/forward-btn.svg); }
+    .play-status-bar .play-status-bar__controls .random {
+      width: 41px;
+      height: 25px; }
+      .play-status-bar .play-status-bar__controls .random.off {
+        background-image: url(../assets/svg/random-btn-off.svg); }
+  .play-status-bar .play-status-bar__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    .play-status-bar .play-status-bar__info .albumart {
+      width: 70px;
+      height: 70px;
+      background: url(../assets/img/album-cover-copy.png) no-repeat;
+      display: inline-block; }
+    .play-status-bar .play-status-bar__info .gradient {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dcdfe2+0,ffffff+10,ffffff+90,dcdfe2+100&1+0,0+10,0+90,1+100 */
+      background: -moz-linear-gradient(left, #dcdfe2 0%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, #dcdfe2 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, #dcdfe2 0%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, #dcdfe2 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, #dcdfe2 0%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, #dcdfe2 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dcdfe2', endColorstr='#dcdfe2',GradientType=1 );
+      /* IE6-9 */
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0; }
+    .play-status-bar .play-status-bar__info .music-info {
+      width: 300px;
+      height: 100%;
+      margin: 0 10px;
+      display: inline-block;
+      position: relative;
+      z-index: 2; }
+      .play-status-bar .play-status-bar__info .music-info * {
+        z-index: 1; }
+      .play-status-bar .play-status-bar__info .music-info .title {
+        overflow: hidden;
+        padding: 0 18px;
+        font-weight: bold; }
+      .play-status-bar .play-status-bar__info .music-info .marquee {
+        left: 0;
+        position: relative;
+        white-space: nowrap;
+        -webkit-animation: titleMarquee 10s infinite;
+        animation: titleMarquee 10s infinite; }
+    .play-status-bar .play-status-bar__info .time {
+      display: inline-block;
+      font-weight: bold;
+      font-size: 20px; }
+      .play-status-bar .play-status-bar__info .time * {
+        display: inline-block;
+        margin-left: 20px; }
+      .play-status-bar .play-status-bar__info .time .total {
+        color: #818181; }
+  .play-status-bar .play-status-bar__playlist-btn {
+    background: url(../assets/svg/playlist-btn.svg) no-repeat 100% 100%;
+    width: 48px;
+    height: 46px;
+    margin-top: 13px;
+    margin-right: 75px;
+    cursor: pointer; }
