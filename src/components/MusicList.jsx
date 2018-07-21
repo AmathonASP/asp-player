@@ -4,16 +4,19 @@ import '../style/MusicList.css';
 
 class MusicList extends Component {
 
+  handleSelectMusic = (id, bitrate, title) => {
+    this.props.onSelectMusic(id, bitrate, title);
+  }
   render() {
     const { musicList } = this.props;
     
     return (
       <div className="music-list">
         <div className="ASP" />
-        {musicList.map((music) => {
+        {musicList.map((music, index) => {
           return (
-            <div className="music-list__item" style={{backgroundImage: `url(${music.thumbnail})`}}>
-              <div className="blur"/>
+            <div className="music-list__item" key={index} onClick={this.handleSelectMusic(music.id, music.max_bitrate, music.title)}>
+              <div className="blur" style={{backgroundImage: `url(${music.thumbnail})`}}/>
               <h2>{music.title}</h2>
               <p>{music.artist}</p>
             </div>

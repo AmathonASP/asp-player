@@ -44,7 +44,7 @@ class App extends Component {
   
   state = {
     track: {
-      source: 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8'
+      source: ''
     },
     now: {
       status: "stop",
@@ -95,6 +95,14 @@ class App extends Component {
       }
     }
   }
+  
+  handleSelectMusic = (id, bitrate, title) => {
+    this.setState({
+      track: {
+        source: 'http://13.209.185.225/media/' + id + '/' + bitrate + '/' + title + '.m3u8'
+      }
+    });
+  }
 
   
   render() {
@@ -106,6 +114,7 @@ class App extends Component {
             <Main {...props}
               now={now}
               onTogglePlay={this.handleTogglePlay}
+              onSelectMusic={this.handleSelectMusic}
             />
           )}/>
           <Route exact path="/player" render={(props) => (
